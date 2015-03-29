@@ -1,0 +1,54 @@
+﻿<section id="main-slider" class="no-margin">
+    <div ng-app="mainApp" ng-controller="indexController as ctrl">
+        <div class="carousel-inner">
+            <div class="item active" style="background-image: url(../../Images/slider/bg3.jpg);height: 500px">
+                <div class="container">
+                    <div class="slide-margin row">
+                        <div class="col-sm-6 col-lg-6 col-md-4">
+                            <div class="carousel-content">
+                                <div class="widget search" style="margin-top: 45%">
+                                    <div class="row">
+                                        <div class="col-lg-8">
+                                            <input type="text" class="form-control" autocomplete="off" />
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <input type="button" style="margin-top: 0%" class="btn btn-primary" value="Search" />
+                                            <md-autocomplete ng-disabled="ctrl.isDisabled"
+                                                             md-no-cache="ctrl.noCache"
+                                                             md-selected-item="ctrl.selectedItem"
+                                                             md-search-text="ctrl.searchText"
+                                                             md-items="item in ctrl.querySearch(ctrl.searchText)"
+                                                             md-item-text="item.display"
+                                                             placeholder="What is your favorite US state?">
+                                                <span md-highlight-text="ctrl.searchText">{{item.display}}</span>
+                                                <md-checkbox ng-model="ctrl.simulateQuery">Simulate query for results?</md-checkbox>
+                                                <md-checkbox ng-model="ctrl.noCache">Disable caching of queries?</md-checkbox>
+                                                <md-checkbox ng-model="ctrl.isDisabled">Disable the input?</md-checkbox>
+
+                                            </md-autocomplete>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/angular-animate.js"></script>
+<script src="~/Scripts/core/services/aria/aria.js"></script>
+<script src="~/Scripts/core/services/aria/aria.spec.js"></script>
+<script src="~/Scripts/core/services/compiler/compiler.js"></script>
+<script src="~/Scripts/core/services/compiler/compiler.spec.js"></script>
+<script src="~/Scripts/core/services/interimElement/interimElement.js"></script>
+<script src="~/Scripts/core/services/interimElement/interimElement.spec.js"></script>
+<script src="~/Scripts/core/services/registry/componentRegistry.js"></script>
+<script src="~/Scripts/core/services/theming/theme.palette.js"></script>
+<script src="~/Scripts/core/services/theming/theming.js"></script>
+<script src="~/Scripts/core/services/theming/theming.spec.js"></script>
+<script src="~/Scripts/angular-material.js"></script>
+<script src="~/Scripts/angular/mainApp.js"></script>
+<script src="~/Scripts/angular/controllers/indexController.js"></script>
