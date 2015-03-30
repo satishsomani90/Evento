@@ -1,54 +1,208 @@
-﻿<section id="main-slider" class="no-margin">
-    <div ng-app="mainApp" ng-controller="indexController as ctrl">
-        <div class="carousel-inner">
-            <div class="item active" style="background-image: url(../../Images/slider/bg3.jpg);height: 500px">
-                <div class="container">
-                    <div class="slide-margin row">
-                        <div class="col-sm-6 col-lg-6 col-md-4">
-                            <div class="carousel-content">
-                                <div class="widget search" style="margin-top: 45%">
-                                    <div class="row">
-                                        <div class="col-lg-8">
-                                            <input type="text" class="form-control" autocomplete="off" />
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <input type="button" style="margin-top: 0%" class="btn btn-primary" value="Search" />
-                                            <md-autocomplete ng-disabled="ctrl.isDisabled"
-                                                             md-no-cache="ctrl.noCache"
-                                                             md-selected-item="ctrl.selectedItem"
-                                                             md-search-text="ctrl.searchText"
-                                                             md-items="item in ctrl.querySearch(ctrl.searchText)"
-                                                             md-item-text="item.display"
-                                                             placeholder="What is your favorite US state?">
-                                                <span md-highlight-text="ctrl.searchText">{{item.display}}</span>
-                                                <md-checkbox ng-model="ctrl.simulateQuery">Simulate query for results?</md-checkbox>
-                                                <md-checkbox ng-model="ctrl.noCache">Disable caching of queries?</md-checkbox>
-                                                <md-checkbox ng-model="ctrl.isDisabled">Disable the input?</md-checkbox>
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Banner{
+<script src="~/Scripts/jquery.min.js"></script>
+<!-- script-for-nav -->
+<div class="top-slide">
+    <section class="slider">
+        <div class="flexslider">
 
-                                            </md-autocomplete>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+            <div class="flex-viewport" style="overflow: hidden; position: relative;">
+                <ul class="slides" style="width: 1000%; -webkit-transition-duration: 0.6s; transition-duration: 0.6s; -webkit-transform: translate3d(-2280px, 0px, 0px);">
+                    <li class="clone" style="width: 1140px; float: left; display: block;">
+                        <div class="tittle">
+                            <h1>Lorem Ipsum </h1>
+                            <h2>Many desktop publi</h2>
                         </div>
-                    </div>
+                    </li>
+                    <li class="" style="width: 1140px; float: left; display: block;">
+                        <div class="tittle">
+                            <h1>tirmiopsumdo</h1>
+                            <h2>Volupta augun koising</h2>
+                        </div>
+                    </li>
+                    <li style="width: 1140px; float: left; display: block;" class="flex-active-slide">
+                        <div class="tittle">
+                            <h1>Content here</h1>
+                            <h2> variations of passages</h2>
+                        </div>
+                    </li>
+                    <li style="width: 1140px; float: left; display: block;" class="">
+                        <div class="tittle">
+                            <h1>Lorem Ipsum </h1>
+                            <h2>Many desktop publi</h2>
+                        </div>
+                    </li>
+                    <li class="clone" style="width: 1140px; float: left; display: block;">
+                        <div class="tittle">
+                            <h1>tirmiopsumdo</h1>
+                            <h2>Volupta augun koising</h2>
+                        </div>
+                    </li>
+                </ul>
+            </div><ol class="flex-control-nav flex-control-paging"><li><a class="">1</a></li><li><a class="flex-active">2</a></li><li><a class="">3</a></li></ol><ul class="flex-direction-nav"><li><a class="flex-prev" href="#">Previous</a></li><li><a class="flex-next" href="#">Next</a></li></ul>
+        </div>
+    </section>
+</div>
+<!-- FlexSlider -->
+<script defer="" src="js/jquery.flexslider.js"></script>
+}
+<div class="prasent" ng-app="mainApp" ng-controller="indexController">
+    <div class="container">
+        <div class="col-lg-12 col-sm-12">
+            <div class="row">
+                <div class="col-lg-8">
+                    <input type="text" class="form-control" ng-model="searchText" placeholder="Search city..." typeahead="city as city.CityName for city in GetCity($viewValue)" />
+                </div>
+                <div class="col-lg-3">
+                    <input type="button" value="Search" class="btn btn-1c btn1 btn-1d" />
                 </div>
             </div>
         </div>
     </div>
-</section>
+</div>
+<div class="gravida">
+    <div class="container">
+        <div class="col-md-6 gravida-left">
+            <img src="/images/img1.jpg" class="img-responsive" alt="" />
+            <div class="gravida-1">
+                <p>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat uam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttit</p>
+                <a href="single.html" class="btn  btn-1c btn1 btn-1d">Gravida Ompi</a>
+            </div>
+        </div>
+        <div class="col-md-6 gravida-right">
+            <div class="gravida-botom">
+                <div class="grabotom-left">
+                    <img src="/images/img2.jpg" class="img-responsive" alt="" />
+                </div>
+                <div class="grabotom-right">
+                    <h4>Lorem ipsum do</h4>
+                    <p>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra amit incon.</p>
+                    <a href="single.html" class="link">Read More</a>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="gravida-botom">
+                <div class="grabotom-left">
+                    <img src="/images/img3.jpg" class="img-responsive" alt="" />
+                </div>
+                <div class="grabotom-right">
+                    <h4>Lorem ipsum dol</h4>
+                    <p>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra amit incon.</p>
+                    <a href="single.html" class="link">Read More</a>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="gravida-botom">
+                <div class="grabotom-left">
+                    <img src="/images/img4.jpg" class="img-responsive" alt="" />
+                </div>
+                <div class="grabotom-right">
+                    <h4>Lorem ipsum do</h4>
+                    <p>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra amit incon.</p>
+                    <a href="single.html" class="link">Read More</a>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+<!-- gravida -->
+<!-- donec -->
+<div class="donec">
+    <div class="container">
+        <div class="donec-top">
+            <div class="col-md-6 donec-left">
+                <h3>Donec nec justo</h3>
+                <p>Morbi in sem quis dui placerat ornare. Pellentesque odiomod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat uam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttit</p>
+            </div>
+            <div class="col-md-6 donec-right">
+                <h3>Lorem ipsum dolor</h3>
+                <p>Untres in sem quis dui placerat ornare. Pellentesque odio nismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat uam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttit</p>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        <div class="donec-bottom">
+            <img src="/images/img5.png" class="img-responsive" alt="" />
+        </div>
+    </div>
+</div>
+<!-- donec -->
+<!-- fusce -->
+<div class="fusce">
+    <div class="container">
+        <h3><span>Fusce</span> pellentesque </h3>
+        <div class="fusce-top">
+            <div class="col-md-6 fusce-1">
+                <p>Cintrusn in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat uam erat volutpat. dui mi, tincidunt quis, accumsan porttit lorem ipsum.</p>
+                <div class="top-1">
+                    <div class="fusce-left">
+                        <img src="/images/img6.png" class="img-responsive" alt="" />
+                    </div>
+                    <div class="fusce-right">
+                        <h5><a href="#">John Doe</a></h5>
+                        <h6>Company name</h6>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+            <div class="col-md-6 fusce-1">
+                <p>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat uam erat volutpat. dui mi, tincidunt quis, accumsan porttit lorem ipsum.</p>
+                <div class="top-1">
+                    <div class="fusce-left">
+                        <img src="/images/img7.png" class="img-responsive" alt="" />
+                    </div>
+                    <div class="fusce-right">
+                        <h5><a href="#">Amada Doe</a></h5>
+                        <h6>Company name</h6>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        <div class="fusce-bottom">
+            <div class="col-md-6 fusce-1">
+                <p>Cintrusn in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat uam erat volutpat. dui mi, tincidunt quis, accumsan porttit lorem ipsum.</p>
+                <div class="top-1">
+                    <div class="fusce-left">
+                        <img src="/images/img8.png" class="img-responsive" alt="" />
+                    </div>
+                    <div class="fusce-right">
+                        <h5><a href="#">Kate Doe</a></h5>
+                        <h6>Company name</h6>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+            <div class="col-md-6 fusce-1">
+                <p>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat uam erat volutpat. dui mi, tincidunt quis, accumsan porttit lorem ipsum.</p>
+                <div class="top-1">
+                    <div class="fusce-left">
+                        <img src="/images/img9.png" class="img-responsive" alt="" />
+                    </div>
+                    <div class="fusce-right">
+                        <h5><a href="#">Peter Doe</a></h5>
+                        <h6>Company name</h6>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/easing.js"></script>
+
+<script src="~/Scripts/move-top.js"></script>
 <script src="~/Scripts/angular.js"></script>
-<script src="~/Scripts/angular-animate.js"></script>
-<script src="~/Scripts/core/services/aria/aria.js"></script>
-<script src="~/Scripts/core/services/aria/aria.spec.js"></script>
-<script src="~/Scripts/core/services/compiler/compiler.js"></script>
-<script src="~/Scripts/core/services/compiler/compiler.spec.js"></script>
-<script src="~/Scripts/core/services/interimElement/interimElement.js"></script>
-<script src="~/Scripts/core/services/interimElement/interimElement.spec.js"></script>
-<script src="~/Scripts/core/services/registry/componentRegistry.js"></script>
-<script src="~/Scripts/core/services/theming/theme.palette.js"></script>
-<script src="~/Scripts/core/services/theming/theming.js"></script>
-<script src="~/Scripts/core/services/theming/theming.spec.js"></script>
-<script src="~/Scripts/angular-material.js"></script>
+<script src="~/Scripts/ui-bootstrap-tpls-0.12.0.min.js"></script>
 <script src="~/Scripts/angular/mainApp.js"></script>
 <script src="~/Scripts/angular/controllers/indexController.js"></script>
+<script src="~/Scripts/angular/services/getcities.js"></script>
+<script src="~/Scripts/angular/Request.js"></script>

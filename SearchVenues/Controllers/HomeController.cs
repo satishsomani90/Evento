@@ -19,5 +19,15 @@ namespace SearchVenues.Controllers
             ViewBag.Title = "Vanues";
             return View();
         }
+        public ActionResult Contact()
+        {
+            ViewBag.Title = "Contact Us";
+            return View();
+        }
+        public ActionResult Login()
+        {
+            ViewBag.Title = "Login";
+            return View();
+        }
     }
 }
