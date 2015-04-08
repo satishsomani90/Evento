@@ -184,6 +184,6 @@ D:\Evento\SearchVenues\bin\Microsoft.Owin.Security.Google.xml
 D:\Evento\SearchVenues\bin\Microsoft.Owin.Security.Twitter.xml
 D:\Evento\SearchVenues\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\Evento\SearchVenues\bin\System.Web.Http.Owin.xml
-D:\Evento\SearchVenues\obj\Debug\SearchVenues.csprojResolveAssemblyReference.cache
 D:\Evento\SearchVenues\obj\Debug\SearchVenues.dll
 D:\Evento\SearchVenues\obj\Debug\SearchVenues.pdb
+D:\Evento\SearchVenues\obj\Debug\SearchVenues.csprojResolveAssemblyReference.cache

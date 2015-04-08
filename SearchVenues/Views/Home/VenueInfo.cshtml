@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Venues";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="single" ng-app="mainApp" ng-controller="venueInfoCtrl">
+    <div class="container">
+        <h2>{{VenueInfo.Name}}</h2>
+        <div class="single-section">
+            <div class="single-pic">
+                <img src="/images/pic5.jpg" alt="">
+            </div>
+            <div class="col-lg-12 row">
+                <div class="col-lg-6 row">
+                    <p>
+                        {{VenueInfo.Description}}
+                    </p>
+                    <h3>Complete Address</h3>
+                    <p>
+                        {{VenueInfo.Address.Address1}}, {{VenueInfo.Address.Area.AreaName}}, {{VenueInfo.Address.Area.City.CityName}}, {{VenueInfo.Address.Area.City.State.StateName}}
+                    </p>
+                </div>
+                <div class="col-lg-6 row pull-right">
+                        <div class="price-table-grids" style="width: 65%; float: right">
+                            <div class="price-table-grid price-table-grid2" style="width: 100%">
+                                <div class="price-table-grid-head price-table-grid-head2">
+                                    <h2>Facilities</h2>
+                                </div>
+                                <div class="price-table-grid-info">
+                                    <ul>
+                                        <li ng-repeat="facility in Facilities"><p><span> </span>{{facility.FacilityName}}</p></li>
+                                        <div class="clear"> </div>
+                                    </ul>
+
+                                </div>
+                            </div>
+                            <div class="clear"> </div>
+                        </div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/angular/mainApp.js"></script>
+<script src="~/Scripts/ui-bootstrap-tpls-0.12.0.min.js"></script>
+<script src="~/Scripts/angular/controllers/venueInfoCtrl.js"></script>
+<script src="~/Scripts/angular/services/getvenueinfo.js"></script>
+<script src="~/Scripts/angular/services/getfacilities.js"></script>
+<script src="~/Scripts/angular/Request.js"></script>
+<script src="~/Scripts/angucomplete.js"></script>

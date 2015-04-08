@@ -1,6 +1,6 @@
 ﻿/// <reference path="../../angular.js" />
 /// <reference path="../mainApp.js" />
-mainApp.factory("getCities", function ($http) {
+mainApp.factory("getCities", function ($http, $q) {
     return {
         get: function (value, callback) {
             $http({

@@ -1,5 +1,6 @@
 ﻿using SearchVenues.Models;
 using SearchVenues.Models.Models;
+using SearchVenues.Models.ViewModel;
 using SearchVenues.Utilities;
 using System;
 using System.Collections.Generic;
@@ -21,15 +22,18 @@ namespace SearchVenues.Controllers
         {
             this.cityProvider = new CityProvider();
         }
-        public VenueBrokerResponse Get([FromUri]VenueBrokerRequest request)
+        public List<CityViewModel> Get([FromUri]VenueBrokerRequest request, string text)
         {
+            //string SearchText = request.SearchCriteria["SearchText"];
             VenueBrokerResponse response = new VenueBrokerResponse();
-            List<City> listOfCities = (from b in cityProvider.All
-                                       select b).ToList();
-            response.Data = listOfCities;
-            response.Message = "Passed";
-            response.Result = VenueBrokerResult.PASSED;
-            return response;
+            List<CityViewModel> listOfCities = (from b in cityProvider.All
+                                                where b.CityName.Contains(text)
+                                       select new CityViewModel() { 
+                                            display = b.CityName,
+                                            value = b.CityID,
+                                            state = b.State.StateName
+                                       }).ToList();
+            return listOfCities;
         }
     }
 }
