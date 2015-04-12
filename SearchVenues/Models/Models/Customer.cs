@@ -15,7 +15,7 @@ namespace SearchVenues.Models.Models
         public string LastName { get; set; }
         public string Email { get; set; }
         public string MobileNumber { get; set; }
-        public int AddressID { get; set; }
+        public int? AddressID { get; set; }
         [ForeignKey("AddressID")]
         public virtual Address Address { get; set; }
         public DateTime CreatedAt { get; set; }

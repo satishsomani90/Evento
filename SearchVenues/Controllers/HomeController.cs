@@ -68,5 +68,11 @@ namespace SearchVenues.Controllers
                 return RedirectToAction("Index");
             }
         }
+        public ActionResult Suppliers()
+        {
+            ViewBag.Title = "Suppliers";
+            ViewBag.BannerClass = "banner1";
+            return View();
+        }
     }
 }

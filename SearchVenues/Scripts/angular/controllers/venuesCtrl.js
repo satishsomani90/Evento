@@ -3,6 +3,7 @@ mainApp.controller('venuesCtrl', ['$timeout', '$scope', '$http', function ($time
     $scope.Init = function () {
       var url = document.URL;
       var id = url.substring(url.lastIndexOf('/') + 1);
+      id = id == "Venues" ? 0 : id;
       $scope.Request = new Request();
       $scope.Request.Criteria = "[{Key: 'LocationID', Value: '" + id + "'}]";
       $http({
@@ -11,7 +12,6 @@ mainApp.controller('venuesCtrl', ['$timeout', '$scope', '$http', function ($time
           params: $scope.Request.get()
       }).success(function (callback) {
           $scope.Venues = callback.Data;
-          console.log($scope.Venues);
       });
     };
 
@@ -30,9 +30,20 @@ mainApp.controller('venuesCtrl', ['$timeout', '$scope', '$http', function ($time
         window.location.href = "/Home/VenueInfo/" + ID;
     }
 
+    $scope.Search = function (SearchText) {
+        if (SearchText != null)
+        {
+            window.location.href = "/Home/Venues/" + SearchText.originalObject.value;
+        }
+        else {
+            return false;
+        }
+    }
+
     $scope.ApplyFilter = function (filter) {
         var url = document.URL;
         var id = url.substring(url.lastIndexOf('/') + 1);
+        id = id == "Venues" ? 0 : id;
         var budget = filter.Budget != null || typeof (filter.Budget) !== "undefined" ? filter.Budget : 0;
         var capacity = filter.Capacity != null || typeof (filter.Capacity) !== "undefined" ? filter.Capacity : 0;
         $scope.Request = new Request();

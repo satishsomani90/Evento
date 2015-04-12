@@ -8,7 +8,6 @@ mainApp.controller("indexCtrl", ["$scope", "getCities", "$http", function ($scop
             method: "GET",
             params: $scope.Request.get()
         }).then(function (data) {
-            console.log(data);
             return data.data.Data.map(function (item) {
                 return item;
             })
